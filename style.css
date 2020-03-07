@@ -8,9 +8,9 @@
 }
 
 h2 {
-  font-family: "Rubik Mono", monospace;
   font-size: 2.4rem;
-  letter-spacing: -0.1rem;
+  letter-spacing: -0.05rem;
+  margin-bottom: 8px;
 }
 
 body {
@@ -19,4 +19,80 @@ body {
   align-content: center;
   min-height: 100vh;
   background: #222;
+}
+
+p {
+  line-height: 1.7rem;
+  letter-spacing: 0.03rem;
+  max-width: 95%;
+}
+
+.container {
+  position: relative;
+  max-width: 100%;
+  margin: 40px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: minmax(100px, auto);
+
+  /* tries to fill holes in the layout earlier */
+  grid-auto-flow: dense;
+  grid-gap: 10px;
+}
+
+.container .box {
+  background: #333;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+  transition: 0.5s;
+  position: relative;
+}
+
+.container .box:after {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #222;
+  font-size: 28px;
+  content: attr(data-rank);
+  z-index: 12;
+  transition: 0.5s;
+}
+
+.container .box:hover,
+.container .box:focus {
+  /* background-color: attr(data-color color, crimson); */
+  /* background: #3d7dca; */
+  background: #003a70;
+}
+
+.container .box:hover:after {
+  color: #ffcb05;
+}
+
+.container .box img {
+  position: relative;
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.container .box:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.container .box:nth-child(2) {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.container .box:nth-child(4) {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.container .box:nth-child(7) {
+  grid-column: span 3;
+  grid-row: span 1;
 }
