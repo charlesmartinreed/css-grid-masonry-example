@@ -76,7 +76,7 @@ p {
   /* background: #3d7dca; */
   background: #003a70;
   transform: scale(1.02);
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  box-shadow: inset 2px 2px 1rem rgba(2, 23, 43, 0.7);
 }
 
 .container .box:hover:after {
@@ -84,7 +84,7 @@ p {
 }
 
 .container .box:hover h2 {
-  color: #f93318;
+  color: #111;
 }
 
 .container .box:hover img {
